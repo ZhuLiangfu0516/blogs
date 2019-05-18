@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--引入属性文件 -->
+    <context:property-placeholder location="classpath:config.properties"/>
+    <!--自动扫描(自动注入) -->
+    <context:component-scan base-package="com.website.service"/>
+    <!--创建连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--创建Spring提供的SqlSession的工厂-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:SqlMapConfig.xml"/>
+    </bean>
+
+    <!--创建包扫描器,扫描dao的包对接口生成代理-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.website.dao"/>
+    </bean>
+
+    <!--事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="getUserName" class="com.website.util.GetUserName"/>
+
+    <!--开启Spring声明式事务的注解支持-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <import resource="classpath:spring-security.xml"/>
+
+    <import resource="classpath:applicationContext-redis.xml"/>
+
+    <!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!-- 指定所上传文件的总大小不能超过500KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和。
+        这个的大小是以字节为单位的，要多大自己算好了再设置-->
+        <property name="maxUploadSize" value="500000"/>
+        <!-- 最大内存大小 (10240)-->
+        <property name="maxInMemorySize" value="40960" />
+    </bean>
+
+</beans>

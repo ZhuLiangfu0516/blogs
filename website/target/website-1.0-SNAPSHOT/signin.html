@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册界面</title>
+    <!--必要样式-->
+    <link href="css/login.css" rel="stylesheet" type="text/css"/>
+    <!--弹窗美化开始-->
+    <script src="js/alert/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="js/alert/sweetalert.css">
+    <!--弹窗美化结束-->
+
+    <script src="angularjs/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/service/userService.js"></script>
+    <script src="js/controller/userController.js"></script>
+
+</head>
+<body ng-app="appController" ng-controller="userController">
+<div class='login'>
+    <div class='login_title'>
+     .....
+    </div>
+    <div class='login_fields'>
+        <div class='login_fields__user'>
+            <div class='icon'>
+                <img alt="" src='img/login/user_icon_copy.png'>
+            </div>
+            <input  name="username" ng-model="entity.username"  placeholder='手机号' maxlength="16" type='text' autocomplete="off" />
+            <div class='validation'>
+                <img alt="" src='img/login/tick.png'>
+            </div>
+        </div>
+        <div class="login_fields__user clearfix">
+            <div class="icon "><img src="img/login/key.png"/></div>
+            <div class="login-center-img J_codeimg" ng-click="sendSms()"
+                 style="text-align: center; width: 30%;float:right;border-radius: 5px;background-color: rgba(1,255,170,0.16);color: white; top: 0px;line-height: 30px">
+                获取验证码
+            </div>
+            <div class="login-center-input"ng-dblclick="sendSms()" style="width: 50%">
+                <input type="text" ng-model="entity.code" name="code" placeholder="验证码"
+                       onfocus="this.placeholder='请输入收到的验证码!'" onblur="this.placeholder='请输入验证码'"/>
+            </div>
+        </div>
+
+        <div class='login_fields__password'>
+            <div class='icon'>
+                <img alt="" src='img/login/key.png'>
+            </div>
+            <input ng-model="entity.password" name="password" placeholder='密码' maxlength="12" type='password' autocomplete="off">
+            <div class='validation'>
+                <img alt="" src='img/login/tick.png'>
+            </div>
+        </div>
+        <div class='login_fields__submit'>
+            <input type='button' value='注册' ng-click="regist()">
+        </div>
+
+        <div class="zc">
+            已有有账号？<a  href="login.html"  target="_parent" style="color: #61BFFF">　立即登录　</a>
+        </div>
+    </div>
+
+</div>
+<script src="js/jquery-3.4.0.js"></script>
+<script type="text/javascript" src="js/Particleground.js"></script>
+<script type="text/javascript" src="js/Treatment.js"></script>
+</body>
+</html>

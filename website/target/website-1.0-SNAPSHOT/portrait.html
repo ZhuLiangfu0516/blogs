@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>更换头像</title>
+
+<!--弹窗美化开始-->
+<script src="js/alert/sweetalert-dev.js"></script>
+<link rel="stylesheet" href="js/alert/sweetalert.css">
+
+<!--弹窗美化结束-->
+<script src="angularjs/angular.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/service/portraitService.js"></script>
+<script src="js/controller/portraitController.js"></script>
+
+</head>
+<body ng-app="appController" ng-controller="portraitController">
+<!-- 文件上传表单的提交方式必须是“post” 编码类型必须为：enctype="multipart/form-data" -->
+<form>
+    <input id="fileUpload" type="file" ng-model="entity.file" name="file" width="200" height="200">
+    <input type="submit" ng-click="uploadFile()" value="上传头像"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+
+    <!--必要样式-->
+    <link href="css/login.css" rel="stylesheet" type="text/css"/>
+
+    <!--弹窗美化开始-->
+    <script src="js/alert/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="js/alert/sweetalert.css">
+
+    <!--弹窗美化结束-->
+    <script src="angularjs/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/service/userService.js"></script>
+    <script src="js/controller/userController.js"></script>
+
+</head>
+<body ng-app="appController" ng-controller="userController">
+<div class='login'>
+    <div class='login_title'>
+        .....
+    </div>
+    <form action="/login" method="post" id="login-from">
+        <div class='login_fields'>
+            <div class='login_fields__user'>
+                <div class='icon'>
+                    <img alt="用户名" src='img/login/user_icon_copy.png'>
+                </div>
+                <input name="username"  ng-model="entity.username" placeholder='用户名' maxlength="16" type='text'
+                       autocomplete="off"/>
+            </div>
+
+            <div class='login_fields__password'>
+                <div class='icon'>
+                    <img alt="密码" src='img/login/key.png'>
+                </div>
+                <input  name="password" ng-model="entity.password"  placeholder='密码' maxlength="16" type='password'
+                       autocomplete="off">
+            </div>
+
+            <div class='login_fields__submit'>
+                <input type='button' ng-click="login()" value='登录' >
+            </div>
+
+            <div class="zc">
+                还没有账号？<a href="signin.html" target="_parent" style="color: #61BFFF">　立即注册　</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="js/jquery-3.4.0.js"></script>
+<script type="text/javascript" src="js/Particleground.js"></script>
+<script type="text/javascript" src="js/Treatment.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+a {
+    color: #6200ea;
+}
+a:hover, a:focus {
+    color: #0a00b6;
+    outline: 0;
+    text-decoration: none !important;
+}
+
+
+.hero-header:after {
+    background: rgba(98,0,234, 0.64);
+    background: -moz-linear-gradient(135deg, rgba(98,0,234, 0.50) 0%, rgba(98,0,234, 0.40) 100%);
+    background: -o-linear-gradient(135deg, rgba(98,0,234, 0.50) 0%, rgba(98,0,234, 0.40) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(98,0,234, 0.50) 0%, rgba(98,0,234, 0.40) 100%);
+    background: linear-gradient(135deg, rgba(98,0,234, 0.50) 0%, rgba(98,0,234, 0.40) 100%);
+}
+.hero-header:after {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.btn{
+    font-family: 'Hind';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    padding: .7rem 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    -webkit-transition: 350ms ease all;
+    transition: 350ms ease all;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.10);
+}
+.btn:hover, .btn:focus {
+    box-shadow: 0px 6px 10px rgba(153, 153, 153, 0.25);
+}
+.btn-round{
+    border-radius: 30px;
+}
+
+/*colors*/
+.btn-white, .btn-white:hover, .btn-white:focus, .btn-white:active, .btn-white:disabled{
+    color: #292b2c;
+    background-color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.btn-white:hover, .btn-white:focus{
+    box-shadow: 0px 6px 10px rgba(255,255,255, 0.25);
+}
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:disabled{
+    color: #fff;
+    background-color: #6200ea;
+    border-color: #6200ea;
+}
+.btn-primary:hover, .btn-primary:focus{
+    box-shadow: 0px 6px 10px rgba(98,0,234, 0.25);
+}
+.btn-danger, .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger:disabled{
+    color: #fff;
+    background-color: #ff1744;
+    border-color: #ff1744;
+}
+.btn-danger:hover, .btn-danger:focus{
+    box-shadow: 0px 6px 10px rgba(255,23,68, 0.25);
+}
+
+.colored-section, .colored-section h1, .colored-section h6 {
+    color: #FFFFFF;
+}
+.colored-section.hero-header:after {
+    background: rgba(41,43,44, 0.64);
+    background: -moz-linear-gradient(135deg, rgba(41,43,44, 0.50) 0%, rgba(41,43,44, 0.40) 100%);
+    background: -o-linear-gradient(135deg, rgba(41,43,44, 0.50) 0%, rgba(41,43,44, 0.40) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(41,43,44, 0.50) 0%, rgba(41,43,44, 0.40) 100%);
+    background: linear-gradient(135deg, rgba(41,43,44, 0.50) 0%, rgba(41,43,44, 0.40) 100%);
+}
+
+::selection{
+    color: #fff;
+    background-color: #6200ea;
+}
+::-webkit-input-placeholder  { /* Chrome */
+    color: #999 !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #999 !important;
+}
+::-moz-placeholder{ /* Firefox 19+*/
+    color: #999 !important;
+    opacity: 1;
+}
+:-moz-placeholder { /*Firefox 4 - 18*/
+    color: #999 !important;
+    opacity: 1;
+}
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,600|Catamaran:300,500,600,700,800,900');
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-size: 15px;
+}
+body {
+    font-family: 'Hind';
+}
+h1, h6 {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+h1, h6{
+    font-family: 'Catamaran';
+}
+
+.hero-header {
+    height: 100vh;
+    background-image: url(../img/index/bg2.jpg);
+    min-height: 300px;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.colored-section.hero-header{
+    background-image: url(../img/index/bg3.jpg);
+}
+.hero-header .container{
+    z-index: 2;
+    position: relative;
+}
+.brand {
+    margin-top: 20vh;
+    color: #fff;
+    text-align: center;
+}
+.brand h1 {
+    font-size: 3.8em;
+    font-weight: 800;
+}
+@media (max-width: 768px){
+    .brand {
+        margin-top: 20vh;
+    }
+    .brand h1{
+        font-size: 2.5em;
+    }
+}
+section {
+    padding: 80px 0px;
+}
+@media (max-width: 768px){
+    section {
+        padding: 40px 10px;
+    }
+}
+
+.demo-section.hero-header{
+    height: 80vh;
+    background-image: url(../img/index/bg1.jpg);
+}
+.demo-section .brand{
+    margin-top: 20vh;
+}

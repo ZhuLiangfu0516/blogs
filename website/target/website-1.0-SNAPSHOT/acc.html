@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>更换头像</title>
+
+<!--弹窗美化开始-->
+<script src="js/alert/sweetalert-dev.js"></script>
+<link rel="stylesheet" href="js/alert/sweetalert.css">
+
+<!--弹窗美化结束-->
+<script src="angularjs/angular.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/service/articleService.js"></script>
+<script src="js/controller/articleController.js"></script>
+
+</head>
+<body ng-app="appController" ng-controller="articleController" ng-init="inquire()">
+
+<div  ng-repeat="title in list">
+<div>标题：{{title.title}}</div>
+<div>关键字：{{title.antistop}}</div>
+<div>作者：{{title.author}}</div>
+<div>描述：{{title.describes}}</div>
+<div>时间：{{title.articleTime}}</div>
+<div>图片：{{title.image}}</div>
+<div>内容：{{title.content}}</div>
+<br>
+<br>
+
+</div>
+
+</body>
+</html>

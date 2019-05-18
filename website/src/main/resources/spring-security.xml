@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+    <!--
+        放行一些资源(登陆页面、登陆失败页面)
+            pattern 要放行的资源er
+            security 放行的资源需要的权限，为空。就是访问当前资源不需要权限控制
+    -->
+    <security:http pattern="/index.html" security="none"/>
+    <security:http pattern="/login.html" security="none"/>
+    <security:http pattern="/signin.html" security="none"/>
+
+    <!--放行静态资源-->
+    <security:http pattern="/angularjs/**" security="none"/>
+    <security:http pattern="/css/**" security="none"/>
+    <security:http pattern="/img/**" security="none"/>
+    <security:http pattern="/images/**" security="none"/>
+    <security:http pattern="/js/**" security="none"/>
+
+    <!--放行静态访问地址-->
+    <security:http pattern="/sms/sendSms" security="none"/>
+    <security:http pattern="/user/regist" security="none"/>
+    <security:http pattern="/user/login" security="none"/>
+    <security:http pattern="/artivle/inquire" security="none"/>
+
+
+    <security:http auto-config="true" use-expressions="true" >
+        <security:intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_ROOT')"/>
+        <security:form-login
+                login-page="/login.html"
+                login-processing-url="/login"
+                username-parameter="username"
+                password-parameter="password"
+                default-target-url="/index.html"
+                always-use-default-target="true"/>
+        <security:remember-me/>
+
+        <security:logout
+                logout-url="/logout" logout-success-url="/index.html"
+                invalidate-session="true"/>
+
+        <!--权限校验失败，跳转到的友好页面-->
+        <!--<security:access-denied-handler error-page="/user.html"/>-->
+        <security:csrf disabled="true"/>
+    </security:http>
+
+    <!--
+        security:authentication-manager 认证管理器配置
+        现在需要查询数据库进行登陆认证的判断（告诉springsecurity数据库正确的账号密码）
+        user-service-ref="userServiceImpl" 表示引用容器中service对象。
+        要求：service一定要实现UserDetailsService接口
+    -->
+    <security:authentication-manager erase-credentials="false">
+        <security:authentication-provider user-service-ref="userServiceImpl">
+            <!--指定加密器-->
+            <security:password-encoder ref="passwordEncoder"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+    <security:global-method-security pre-post-annotations="enabled"/>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+

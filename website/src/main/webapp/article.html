@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>更换头像</title>
+
+    <!--弹窗美化开始-->
+    <script src="js/alert/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="js/alert/sweetalert.css">
+
+    <!--弹窗美化结束-->
+    <script src="angularjs/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/service/articleService.js"></script>
+    <script src="js/controller/articleController.js"></script>
+
+</head>
+<body ng-app="appController" ng-controller="articleController">
+<!-- 文件上传表单的提交方式必须是“post” 编码类型必须为：enctype="multipart/form-data" -->
+<form id="for1"  method="post" enctype="application/json;charset=UTF-8">
+    标题： <input name="title" ng-model="entity.title" type="text" maxlength="20"><br>
+    关键字：<input name="antistop" ng-model="entity.antistop" type="text" maxlength="12"><br>
+    作者： <input name="author" ng-model="entity.author" type="text" maxlength="6"><br>
+    目录： <select name="catalog" ng-model="entity.catalog" style="width: 160px"maxlength="12">
+    <option selected="selected">说说</option>
+    <option>博客日记</option>
+    <option>其他</option>
+</select><br>
+    描述： <input name="describes" ng-model="entity.describe" type="text" maxlength="30"><br>
+    内容：<div id="editor" class="fwbk">
+                <input id="content" name="content" ng-model="entity.content" type="hidden" value="">
+                <p>欢迎使用 <b>气死你</b> 富文本编辑器</p>
+            </div>
+
+    <input type="file" ng-model="entity.file" name="file" width="200" height="200"><br><br>
+    <input type="submit" ng-click="save()" value="上传"/>
+</form>
+
+<!-- 富文本框 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+
+<script type="text/javascript" src="js/wangEditor-3.1.1/release/wangEditor.js"></script>
+<script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#editor')
+    // 或者 var editor = new E( document.getElementById('editor') )
+    editor.create();
+
+    editor.customConfig.onchange = function (html) {
+        // 监控变化，同步更新到 textarea
+        $("#content").val(html)
+    }
+</script>
+</body>
+</html>

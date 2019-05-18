@@ -1,0 +1,439 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('/Admin/Login/fonts/icomoon.eot?rretjt');
+    src: url('/Admin/Login/fonts/icomoon.eot?#iefixrretjt') format('embedded-opentype'),
+    url('/Admin/Login/fonts/icomoon.woff?rretjt') format('woff'),
+    url('/Admin/Login/fonts/icomoon.ttf?rretjt') format('truetype'),
+    url('/Admin/Login/fonts/icomoon.svg?rretjt#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+body {
+    font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+}
+
+body {
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Gudea', sans-serif;
+    background: #EA5C54;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EA5C54 ', endColorstr='#bb6dec', GradientType=1);
+}
+
+body ::-webkit-input-placeholder {
+    color: #4E546D;
+}
+
+body .authent {
+    box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
+    display: none;
+    background: #35394a;
+    background: linear-gradient(230deg, rgba(53, 57, 74, 0) 0%, rgb(0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(53, 57, 74, 0)', endColorstr='rgb(0, 0, 0)', GradientType=1);
+    position: absolute;
+    left: 0;
+    right: 90px;
+    margin: auto;
+    width: 100px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px 70px;
+    top: 200px;
+    bottom: 0;
+    height: 70px;
+    opacity: 0;
+}
+
+body .authent p {
+    text-align: center;
+    color: white;
+}
+
+body .success {
+    display: none;
+    color: #d5d8e2;
+}
+
+body p {
+    color: #D3D7F7;
+    font-size: 10px;
+    text-align: left;
+}
+
+body .login {
+    box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.7);
+    opacity: 1;
+    top: 20px;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.25, 0.265, 0.85);
+    -webkit-transition-property: -webkit-transform, opacity, box-shadow, top, left;
+    transition-property: transform, opacity, box-shadow, top, left;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transform-origin: 161px 100%;
+    -ms-transform-origin: 161px 100%;
+    transform-origin: 161px 100%;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    position: relative;
+    width: 240px;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    padding: 100px 40px 40px 40px;
+    background: #35394a;
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #35394a), color-stop(100%, rgb(0, 0, 0)));
+    background: -webkit-linear-gradient(230deg, rgba(53, 57, 74, 0) 0%, rgb(0, 0, 0) 100%);
+    background: linear-gradient(230deg, rgba(53, 57, 74, 0) 0%, rgb(0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(53, 57, 74, 0)', endColorstr='rgb(0, 0, 0)', GradientType=1);
+}
+
+body .login .validation {
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    top: 14px;
+    opacity: 0;
+}
+
+body .login_title {
+    width: 40px;
+    height: 30px;
+    display: flex;
+    border-radius: 30%;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+body .login_fields {
+    height: 400px;
+    position: absolute;
+    left: 0;
+}
+
+body .login_fields .icon {
+    position: absolute;
+    z-index: 1;
+    left: 36px;
+    top: 8px;
+    opacity: .5;
+}
+
+body .login_fields input[type='password'], body .login_fields input[type='text'] {
+    color: #61BFFF !important;
+}
+
+body .login_fields input[type='text'], body .login_fields input[type='password'] {
+    color: #afb1be;
+   /* width: 190px;*/
+    margin-top: -2px;
+    background: rgba(57, 61, 82, 0);
+    left: 0;
+    padding: 10px 65px;
+    border-top: 2px solid rgba(57, 61, 82, 0);
+    border-bottom: 2px solid rgba(57, 61, 82, 0);
+    border-right: none;
+    border-left: none;
+    outline: none;
+    font-family: 'Gudea', sans-serif;
+    box-shadow: none;
+}
+
+body .login_fields__user, body .login_fields__password {
+    position: relative;
+}
+
+body .login_fields__submit {
+    position: relative;
+    top: 17px;
+    left: 0;
+    width: 30%;
+    right: 0;
+    text-align: center;
+    margin: auto;
+
+}
+
+body .login_fields__submit input {
+    border-radius: 50px;
+    background: transparent;
+    padding: 10px 50px;
+    border: 2px solid #4FA1D9;
+    color: #4FA1D9;
+    text-transform: uppercase;
+    font-size: 11px;
+    -webkit-transition-property: background, color;
+    transition-property: background, color;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+body .login_fields__submit input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+body .login_fields__submit input:hover {
+    color: white;
+    background: #4FA1D9;
+    cursor: pointer;
+    -webkit-transition-property: background, color;
+    transition-property: background, color;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+:-moz-placeholder {
+    color: #CECFD2;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    color: #CECFD2;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder {
+    color: #CECFD2;
+    opacity: 1;
+}
+
+input::-webkit-input-placeholder {
+    color: #CECFD2;
+    opacity: 1;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-size: 16px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-color: #242645;
+    color: #fff;
+    font-family: 'Source Sans Pro';
+    background-size: 100%;
+    background-image: url(../img/login/Starry.jpg);
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg) scale(0.6);
+        transform: rotate(180deg) scale(0.6);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg) scale(1);
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg) scale(0.6);
+        transform: rotate(180deg) scale(0.6);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg) scale(1);
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg) scale(0.6);
+        transform: rotate(180deg) scale(0.6);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg) scale(1);
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.ball-clip-rotate-multiple {
+    position: relative;
+}
+
+.ball-clip-rotate-multiple > div {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: 2px solid #fff;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 100%;
+    height: 35px;
+    width: 35px;
+    -webkit-animation: rotate 1s 0s ease-in-out infinite;
+    animation: rotate 1s 0s ease-in-out infinite;
+}
+
+.ball-clip-rotate-multiple > div:last-child {
+    display: inline-block;
+    top: 10px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    border-color: #fff transparent #fff transparent;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+img {
+    vertical-align: middle
+}
+
+body, div, input, p {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+img {
+    display: inline-block;
+    border: none
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    outline: 0
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px
+}
+
+::-webkit-scrollbar-button:vertical {
+    display: none
+}
+
+::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {
+    background-color: #e2e2e2
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: rgba(0, 0, 0, .35)
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+    background-color: rgba(0, 0, 0, .38)
+}
+
+@font-face {
+    font-family: layui-icon;
+    src: url(../font/iconfont.eot?v=1.0.9);
+    src: url(../font/iconfont.eot?v=1.0.9#iefix) format('embedded-opentype'), url(../font/iconfont.svg?v=1.0.9#iconfont) format('svg'), url(../font/iconfont.woff?v=1.0.9) format('woff'), url(../font/iconfont.ttf?v=1.0.9) format('truetype')
+}
+
+body {
+    line-height: 24px;
+    font: 14px Helvetica Neue, Helvetica, PingFang SC, \5FAE\8F6F\96C5\9ED1, Tahoma, Arial, sans-serif
+}
+.J_codeimg {
+    width: 85px;
+    height: 36px;
+    padding: 3px;
+    z-index: 0;
+    color: #FFF;
+}
+.zc{
+    font-family: 微软雅黑;
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    padding:90px 60px;
+    float: left;
+    font-size: 12px;
+
+}
